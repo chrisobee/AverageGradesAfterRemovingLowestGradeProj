@@ -7,7 +7,6 @@ namespace AverageGradesAfterRemovingLowestGrade
         static void Main(string[] args)
         {
             ClassGrades grades = new ClassGrades();
-            var classGrades = grades.ConvertStringsToIntArrays();
         }
     }
 }
