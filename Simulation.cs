@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace AverageGradesAfterRemovingLowestGrade
 {
@@ -8,14 +9,19 @@ namespace AverageGradesAfterRemovingLowestGrade
     {
         ClassGrades classGrades = new ClassGrades();
 
-        public void RunCode()
+        public double RunCode()
         {
-            Func<double> average = classGrades.GetAverageGrades;
-            var intArray = classGrades.ConvertStringsToIntArrays();
+            List<double> averagesForEachStudent = new List<double>();
+            double average;
+
+            var intArray = classGrades.ConvertStringsToInts();
             foreach(List<int> grades in intArray)
             {
                 classGrades.RemoveLowestGrade(grades);
+                averagesForEachStudent.Add(grades.Average());
             }
+            average = averagesForEachStudent.Average();
+            return average;
         }
     }
 }

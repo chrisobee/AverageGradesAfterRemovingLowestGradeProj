@@ -15,26 +15,20 @@ namespace AverageGradesAfterRemovingLowestGrade
             "98,100,66,74,55"
         };
 
-        public double GetAverageGrades()
-        {
-
-        }
-
-        public List<List<int>> ConvertStringsToIntArrays()
+        public List<List<int>> ConvertStringsToInts()
         {
             List<List<int>> gradesAsInts = new List<List<int>>();
             for (int i = 0; i < gradesForEachStudent.Count; i++)
             {
-                var splitString = gradesForEachStudent[i].Split(",").Select(n => int.Parse(n)).ToList();
+                var splitString = gradesForEachStudent[i].Split(",").Select(s => int.Parse(s)).ToList();
                 gradesAsInts.Add(splitString);
             }
             return gradesAsInts;
         }
 
-        public List<int> RemoveLowestGrade(List<int> grades)
+        public void RemoveLowestGrade(List<int> grades)
         {
             grades.Remove(grades.Min());
-            return grades;
         }
     }
 }

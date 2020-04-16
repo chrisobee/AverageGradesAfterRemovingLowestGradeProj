@@ -6,7 +6,11 @@ namespace AverageGradesAfterRemovingLowestGrade
     {
         static void Main(string[] args)
         {
-            ClassGrades grades = new ClassGrades();
+            Simulation sim = new Simulation();
+            double average = sim.RunCode();
+            Console.WriteLine(average);
+            Console.ReadLine();
+            
         }
     }
 }
